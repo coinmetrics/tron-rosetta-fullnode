@@ -15,9 +15,11 @@ RUN set -ex; \
 RUN useradd -m -u 1000 -s /bin/bash tron
 USER tron
 
+ARG VERSION
+
 RUN set -ex; \
 	mkdir /home/tron/tron-rosetta-api; \
-	curl -L https://github.com/tronprotocol/tron-rosetta-api/tarball/master | tar -xz --strip-components=1 -C /home/tron/tron-rosetta-api
+	curl -L https://github.com/tronprotocol/tron-rosetta-api/archive/v${VERSION}.tar.gz | tar -xz --strip-components=1 -C /home/tron/tron-rosetta-api
 
 RUN set -ex; \
 	cd /home/tron/tron-rosetta-api; \
