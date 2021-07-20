@@ -6,9 +6,9 @@ RUN set -ex; \
 		curl \
 		patch \
 		openjdk-8-jdk-headless \
-		openjfx=8u161-b12-1ubuntu2 \
-		libopenjfx-java=8u161-b12-1ubuntu2 \
-		libopenjfx-jni=8u161-b12-1ubuntu2 \
+		openjfx \
+		libopenjfx-java \
+		libopenjfx-jni \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
@@ -34,9 +34,9 @@ RUN set -ex; \
 		curl \
 		patch \
 		openjdk-8-jre-headless \
-		openjfx=8u161-b12-1ubuntu2 \
-		libopenjfx-java=8u161-b12-1ubuntu2 \
-		libopenjfx-jni=8u161-b12-1ubuntu2 \
+		openjfx \
+		libopenjfx-java \
+		libopenjfx-jni \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
