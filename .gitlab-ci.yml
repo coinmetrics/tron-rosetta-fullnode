@@ -2,8 +2,25 @@ image: docker:latest
 services:
 - docker:dind
 
+stages:
+    - autobump
+    - build
+
+autobump:
+  stage: autobump
+  image: alpine:latest
+  rules:  # only run from a schedule, when told to bump (and we only run that for the default branch)
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $DO_A_BUMP'
+      when: always
+  script:
+    - apk add -U curl git openssh-client jq
+    - ./autobump.sh
+
 docker_image:
   stage: build
+  #rules:  # don't run when we're just running the bump job
+  #  - if: '$CI_PIPELINE_SOURCE == "schedule" && $DO_A_BUMP'
+  #    when: never
   script:
   - ./build.sh
   tags:
