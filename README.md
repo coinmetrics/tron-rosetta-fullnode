@@ -1,6 +1,6 @@
 # Tron Rosetta docker image
 
-This is unofficial Tron Rosetta docker image.
+This is an unofficial Tron Rosetta docker image.
 
 It is being used internally at Coin Metrics, and is published in the hope it will be useful, but without any warranty. No support is available. You are using it at your own risk.
 
