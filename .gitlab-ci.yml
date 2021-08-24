@@ -14,7 +14,7 @@ autobump:
       when: always
   script:
     - apk add -U curl git openssh-client jq
-    - ./autobump.sh
+    - sh -x ./autobump.sh
 
 docker_image:
   stage: build
