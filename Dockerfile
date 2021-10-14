@@ -23,7 +23,7 @@ RUN set -ex; \
 
 RUN set -ex; \
 	cd /home/tron/tron-rosetta-api; \
-	./gradlew build -x test
+	./gradlew build --refresh-dependencies -x test
 
 
 FROM ubuntu:18.04
