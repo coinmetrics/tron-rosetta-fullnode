@@ -24,6 +24,6 @@ docker_image:
   script:
   - ./build.sh
   tags:
-  - shared
+  - coinmetrics-build-runner
   - linux
   - docker
